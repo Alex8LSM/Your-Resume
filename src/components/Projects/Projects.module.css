@@ -1,0 +1,41 @@
+.mainTitle{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 10px;
+} 
+.container{
+    width: 485px;
+    margin-bottom: 50px;
+   
+} 
+.projectsList{
+    padding: 0 0 0 13px;
+    
+}
+.projectsLink{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+    padding: 0 0 0 13px;
+}
+.projectsText{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+    
+} 
+.projectsItem,
+.projectsBracket{ 
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000;
+}

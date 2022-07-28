@@ -1,0 +1,61 @@
+{
+"name": "Anton Chornyi",
+"photo": {"image":"https://i.ibb.co/GHGDJBf/photo.jpg",
+        "alt":"Anton Chornyi photo"},
+"contacts": {"email":"chornyiav@gmail.com",
+            "phone": "+7 777 777 77 77"
+            },
+"techSkills":["HTML5","CSS3","GIT","WebPack","JavaScript","React.js","Node.js"],
+"softSkills":["Scrum","Agile","GTD","Teamwork"],
+"aboutMe": {
+            "name": "Anton Chornyi",
+            "profession":"Front-End Developer",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+        },
+"projects":[
+    {
+    "link":"https://hellenglish.goit.global/",
+    "tehnology":"HTML5, CSS3"},
+    {    
+    "link":"https://kidslike.goit.global/",
+    "tehnology":"JavaScript "},
+    {
+    "link":"https://cryptohub.goit.global/",
+    "tehnology":"React.js, Node.js"}],
+
+"workExperience":[
+    {
+    "position":"Front-End Developer",
+    "company":"Freelance",
+    "period":"September 2019 - up to now",
+    "country":"Country",
+    "duties":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "Risus commodo viverra maecenas.",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."]
+    },
+    {
+        "position":"Manager",
+        "company":"Roga & Kopyta New",
+        "period":"March 2015 - October 2018",
+        "country":"Country",
+        "duties":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna aliqua.",
+                  "Quis ipsum suspendisse ultrices gravida.",
+                  "Risus commodo viverra maecenas."]
+    },
+    {
+        "position":"Manager ",
+        "company":"Roga & Kopyta LLC",
+        "period":"June 2014 - February 2015",
+        "country":"Country",
+        "duties":["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  "Quis ipsum suspendisse ultrices gravida.",
+                  "Risus commodo viverra maecenas."]
+    }],
+"education":[
+    {"university":"National University of Radioelectronics",
+    "specialty":"Management",
+    "period":"September 2009 - June 2014",
+    "country":"Country"
+    }]
+}

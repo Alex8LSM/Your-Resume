@@ -1,0 +1,31 @@
+.title
+    {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .contacts
+    {
+        margin: 50px 0 0 40px;
+    }
+
+    .contactsType
+    {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+        color: #fff;
+        margin-right: 7px;
+    }
+    .contactsLink
+    {
+        color: #565E6A;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+    }
