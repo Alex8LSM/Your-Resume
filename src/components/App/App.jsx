@@ -1,13 +1,16 @@
 import styles from './App.module.css';
-import Section from '../Section/Section';
-import AboutMe from '../AboutMe/AboutMe';
-import Projects from '../Projects/Projects';
-import WorkExperience from '../WorkExperience/WorkExperience';
-import Education from '../Education/Education';
-import Sidebar from '../Sidebar/Sidebar';
-import Contacts from '../Contacts/Contacts';
-import TechSkills from '../TechSkills/TechSkills';
-import SoftSkills from '../SoftSkills/SoftSkills';
+import {
+  Section,
+  AboutMe,
+  Projects,
+  WorkExperience,
+  Education,
+  Sidebar,
+  Contacts,
+  TechSkills,
+  SoftSkills,
+  Languages,
+} from '../../components';
 import user from '../../Data/user.json';
 export const App = () => {
   return (
@@ -27,6 +30,7 @@ export const App = () => {
           <Contacts contacts={user.contacts} />
           <TechSkills skills={user.techSkills} />
           <SoftSkills skills={user.softSkills} />
+          <Languages languages={user.languages} />
         </Sidebar>
       </Section>
     </Section>
