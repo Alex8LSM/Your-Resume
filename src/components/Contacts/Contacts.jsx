@@ -1,6 +1,6 @@
 import styles from './Contacts.module.css';
 import common from '../Common.module.css';
-const Contacts = ({ contacts }) => {
+const Contacts = ({ contacts,children }) => {
   const contactList = contacts.map((contact, key) => {
     const common = (
       <div className={styles.svgContainer}>
@@ -12,7 +12,7 @@ const Contacts = ({ contacts }) => {
     switch (contact.type) {
       case 'email':
         return (
-          <li key={key}>
+          <li className={styles.listBox} key={key}>
             <a href={`mailto:${contact.link}`} className={styles.contactsLink}>
               {common}
               <span className={styles.contactText}>{contact.link}</span>
@@ -23,11 +23,12 @@ const Contacts = ({ contacts }) => {
         const phone = contact.link;
         const shortPhone = phone.replace(/ |-|\(|\)/g, '');
         return (
-          <li key={key}>
+          <li className={styles.listBox} key={key}>
             <a href={`tel:${shortPhone}`} className={styles.contactsLink}>
               {common}
               <span className={styles.contactText}>{contact.link}</span>
             </a>
+            {children}
           </li>
         );
       case 'addr':
@@ -44,6 +45,7 @@ const Contacts = ({ contacts }) => {
                 {contact.link.city}, {contact.link.country}
               </span>
             </a>
+            {children}
           </li>
         );
       default:
@@ -58,6 +60,7 @@ const Contacts = ({ contacts }) => {
               {common}
               <span className={styles.contactText}>{contact.type}</span>
             </a>
+            {children}
           </li>
         );
     }

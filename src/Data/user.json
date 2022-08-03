@@ -31,19 +31,19 @@
   },
   "projects": [
     { 
-	  "title": "Project title",
+	  "title": "hellenglish",
       "link": "https://hellenglish.goit.global/",
 	  "description": "Project description",
       "tehnology": "HTML5, CSS3"
     },
     {
-	  "title": "Project title",
+	  "title": "kidslike",
       "link": "https://kidslike.goit.global/",
 	  "description": "Project description",
       "tehnology": "JavaScript "
     },
     {
-	  "title": "Project title",
+	  "title": "cryptohub",
       "link": "https://cryptohub.goit.global/",
 	  "description": "Project description",
       "tehnology": "React.js, Node.js"
