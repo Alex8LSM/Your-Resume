@@ -1,27 +1,33 @@
-.container{
-    margin-bottom: 40px;
+.header {
+  font-style: normal;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
 }
-.profession{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000;
-    margin-bottom: 20px;
+.myName {
+  composes: header;
+  font-size: 35px;
+  line-height: 42px;
+  margin-bottom: 10px;
 }
-.myName{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 45px;
-    line-height: 55px;
-    color: #000;
-    margin-bottom: 25px;
+.profession {
+  composes: header;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 20px;
 }
-.description{
-    width: 400px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: #595959;
+.level {
+  composes: profession;
+  color: var(--accent);
+}
+
+.description {
+  /* width: 400px; */
+  padding-left: 20px;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text);
 }

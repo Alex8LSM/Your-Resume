@@ -1,5 +1,4 @@
-import styles from './Languages.module.css';
-
+import styles from '../Common.module.css';
 const Languages = ({ languages }) => {
   const languageList = languages.map((lang, key) => (
     <li className={styles.item} key={key}>

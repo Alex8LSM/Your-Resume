@@ -1,8 +1,11 @@
-.container
-{
-    background-color: #1E2939;
-    width: 370px;
-    padding-top: 40px;
-    
-    
+.container {
+  background-color: var(--sidebarBg);
+  width: 250px;
+  padding: 25px;
+}
+.photo {
+  width: 250px;
+}
+.photoContainer {
+  margin-bottom: 25px;
 }

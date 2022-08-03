@@ -1,0 +1,30 @@
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--title);
+  padding: 7px 15px 4px 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  background-color: var(--titleBg);
+}
+.mainTitle {
+  composes: title;
+}
+.container {
+  margin-bottom: 20px;
+}
+.list {
+  padding: 0 0 0 35px;
+}
+.item {
+  color: var(--accent);
+}
+.text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--sidebartext);
+}

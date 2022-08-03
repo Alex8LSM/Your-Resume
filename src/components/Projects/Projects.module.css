@@ -1,55 +1,54 @@
-.mainTitle {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 27px;
-  color: #000000;
-  margin-bottom: 10px;
-}
-.container {
-  margin-bottom: 50px;
-}
 .projectsList {
-  padding: 0 0 0 13px;
+  padding-left: 20px;
+  list-style: none;
+}
+.item {
+  margin-bottom: 15px;
+}
+.itemContainer {
+  display: flex;
 }
 .link {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
   font-size: 14px;
   line-height: 24px;
-  color: #595959;
-  padding: 0 0 0 5px;
+  color: #000;
+  white-space: nowrap;
+}
+.link:hover,
+.link:focus {
+  color: var(--accent);
 }
 .linkBlock {
   overflow: hidden;
-  width: 350px;
+  width: 300px;
+  flex-wrap: nowrap;
+}
+.description {
+  font-style: italic;
+}
+.tehnologyBlock {
+  margin-left: 5px;
 }
 .tehnology {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: #595959;
+  color: var(--text);
 }
 
 .spacer {
   composes: tehnology;
   margin-left: 5px;
+  display: inline;
 }
-.projectsBracket {
+.bracket {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 24px;
-  color: #000;
-}
-.item {
+  color: var(--vidider);
   font-weight: 700;
-}
-.itemContainer {
-  display: flex;
-}
-.tehnologyBlock {
-  display: block;
-  margin-left: 5px;
 }

@@ -1,31 +1,40 @@
-.title
-    {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 22px;
-        line-height: 27px;
-        color: #fff;
-        margin-bottom: 10px;
-    }
-    .contacts
-    {
-        margin: 50px 0 0 40px;
-    }
+.list {
+  list-style: none;
+}
+.svgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: var(--titleBg);
+}
+.svgIcon {
+  fill: var(--sidebartext);
+  width: 16px;
+  height: 16px;
+}
+.contactsLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
-    .contactsType
-    {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 24px;
-        color: #fff;
-        margin-right: 7px;
-    }
-    .contactsLink
-    {
-        color: #565E6A;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 24px;
-    }
+.contactText {
+  font-style: normal;
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--sidebartext);
+  font-family: 'Times New Roman', Times, serif;
+}
+.contactsLink:hover .svgIcon,
+.contactsLink:focus .svgIcon {
+  fill: var(--accent);
+}
+.contactsLink:hover .contactText,
+.contactsLink:focus .contactText {
+  color: var(--accent);
+}

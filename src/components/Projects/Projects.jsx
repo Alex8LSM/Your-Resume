@@ -1,16 +1,16 @@
 import styles from './Projects.module.css';
-
+import common from '../Common.module.css';
 const Projects = ({ projects }) => {
   const progectList = projects.map((project, key) => (
     <li className={styles.item} key={key}>
       <div className={styles.itemContainer}>
         <div className={styles.linkBlock}>
           <a href={project.link} className={styles.link}>
-            {project.link}
+            {project.title}
           </a>
-          <span className={styles.spacer}>
+          <div className={styles.spacer}>
             .................................................................................
-          </span>
+          </div>
         </div>
         <div className={styles.tehnologyBlock}>
           <span className={styles.bracket}>[ </span>
@@ -18,13 +18,14 @@ const Projects = ({ projects }) => {
           <span className={styles.bracket}> ]</span>
         </div>
       </div>
+      <div className={styles.description}>{project.description}</div>
     </li>
   ));
   return (
-    <section className={styles.container}>
-      <h3 className={styles.mainTitle}>Projects</h3>
+    <section className={common.container}>
+      <h3 className={common.mainTitle}>Projects</h3>
 
-      <ol className={styles.projectsList}>{progectList}</ol>
+      <ul className={styles.projectsList}>{progectList}</ul>
     </section>
   );
 };

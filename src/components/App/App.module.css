@@ -1,23 +1,49 @@
-body 
-{   font-family: 'Montserrat', sans-serif;
-    background-color: #c7c2c2d5;
+/*utils_variables*/
+:root {
+  --accent: #fb6d3a;
+  --title: #fff;
+  --titleBg: #1e2939;
+  --sidebartext: #fff;
+  --sidebarBg: #1f585f;
+  --period: #a8a8a8;
+  --vidider: #000;
+  --text: #595959;
+}
+body {
+  font-family: 'sitka text', sans-serif;
+  background-color: #c7c2c2d5;
+}
+/*common_reset*/
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+  padding: 0;
 }
 
-.mainContainer{
-    background-color: #E5E5E5;
-    width: 1200px;
-    margin: 0px auto;
-    padding: 5px;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
-.container{   
-    background-color: #fff; 
-    width: 1200px;
-    display: flex;
-    flex-direction: row-reverse; 
-    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);          
+
+.mainContainer {
+  background-color: #e5e5e5;
+  width: 1200px;
+  margin: 0px auto;
+  padding: 5px;
+}
+.container {
+  background-color: #fff;
+  width: 1200px;
+  display: flex;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Main_content_section*/
- .mainContent{
-    padding: 100px 90px; 
+.mainContent {
+  padding: 25px;
+  width: 900px;
 }

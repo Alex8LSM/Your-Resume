@@ -1,13 +1,12 @@
 import styles from './Sidebar.module.css';
 
-const Sidebar = ({ children,photo }) => {
-const {image,alt} = photo;
-
-console.log(image,alt)
-console.log(photo)
+const Sidebar = ({ children, photo }) => {
+  const { image, alt } = photo;
   return (
     <section className={styles.container}>
-      <img src={image} alt={alt}/>
+      <div className={styles.photoContainer}>
+        <img src={image} alt={alt} className={styles.photo} />
+      </div>
       {children}
     </section>
   );
