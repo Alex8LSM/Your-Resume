@@ -8,7 +8,8 @@ import Contacts from './Contacts/Contacts';
 import TechSkills from './TechSkills/TechSkills';
 import SoftSkills from './SoftSkills/SoftSkills';
 import Languages from './Languages/Languages';
-import EditBtn from './EditBtn/EditBtn';
+import Buttons from './Buttons/Buttons';
+
 export {
   Section,
   AboutMe,
@@ -20,5 +21,5 @@ export {
   TechSkills,
   SoftSkills,
   Languages,
-  EditBtn
+  Buttons,
 };

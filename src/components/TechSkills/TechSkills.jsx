@@ -1,5 +1,5 @@
 import styles from '../Common.module.css';
-
+// import {user} from '../../components'
 const TechSkills = ({ skills }) => {
   const skillsList = skills.map((skill, key) => (
     <li className={styles.item} key={key}>

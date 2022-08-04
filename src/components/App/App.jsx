@@ -1,18 +1,25 @@
 // import styles from './App.module.css';
-
-import user from '../../Data/user.json';
+// import { createContext, useContext } from "react";
+// import user from '../../Data/user.json';
+// import {user} from '../../components';
 import Loader from '../Loader/Loader';
 import { Route, Routes } from 'react-router-dom';
-import { useEffect, Suspense, lazy } from 'react';
-
+import { 
+  // useEffect, 
+  Suspense, lazy } from 'react';
+  import {useUserContext} from '../../data'
+// const MyContext = createContext();
 const HomePage = lazy(() =>
-  import('../../page/HomePage' /* webpackChunkName: "home" */)
+import('../../page/HomePage' /* webpackChunkName: "home" */)
 );
 const EditPage = lazy(() =>
-  import('../../page/EditPage' /* webpackChunkName: "edit" */)
+import('../../page/EditPage' /* webpackChunkName: "edit" */)
 );
 
 export const App = () => {
+  const user = useUserContext()
+  // const value  = useContext(MyContext);
+  // console.log(value);
   return (
     <Suspense fallback={<Loader />}>
     <Routes>

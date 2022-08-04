@@ -1,6 +1,30 @@
 import styles from './Contacts.module.css';
 import common from '../Common.module.css';
-const Contacts = ({ contacts,children }) => {
+
+const Contacts = ({ contacts,buttons }) => {
+  const EditBtn=buttons?.EditBtn;
+  const DeleteBtn=buttons?.DeleteBtn;
+  const AddBtn=buttons?.AddBtn;
+
+    const onAdd = ()=>{
+      console.log("Add")
+    }
+    const onDelete = (id)=>{
+      console.log("Delete")
+    }
+    const onEdit = (id)=>{
+        console.log("Edit");
+        // contacts[id]="Edited";
+      }
+
+  const editButtons= (id)=>(
+    <>
+      <EditBtn action={onEdit(id)}/>
+      <DeleteBtn action={onDelete(id)}/>
+    </>
+  )
+  const addButton=<AddBtn action={onAdd}/>
+
   const contactList = contacts.map((contact, key) => {
     const common = (
       <div className={styles.svgContainer}>
@@ -17,6 +41,8 @@ const Contacts = ({ contacts,children }) => {
               {common}
               <span className={styles.contactText}>{contact.link}</span>
             </a>
+            {editButtons(key)}
+          
           </li>
         );
       case 'phone':
@@ -28,7 +54,7 @@ const Contacts = ({ contacts,children }) => {
               {common}
               <span className={styles.contactText}>{contact.link}</span>
             </a>
-            {children}
+            {editButtons(key)}
           </li>
         );
       case 'addr':
@@ -45,7 +71,7 @@ const Contacts = ({ contacts,children }) => {
                 {contact.link.city}, {contact.link.country}
               </span>
             </a>
-            {children}
+            {editButtons(key)}
           </li>
         );
       default:
@@ -60,14 +86,21 @@ const Contacts = ({ contacts,children }) => {
               {common}
               <span className={styles.contactText}>{contact.type}</span>
             </a>
-            {children}
+            {editButtons(key)}
           </li>
         );
     }
   });
   return (
     <div className={common.container}>
-      <h3 className={common.title}>Contacts</h3>
+        <h3 className={common.title}>
+          <div className={common.box}>
+              <span>
+                Contacts
+              </span>
+            {addButton}
+          </div>
+        </h3>
       <ul className={styles.list}>{contactList}</ul>
     </div>
   );

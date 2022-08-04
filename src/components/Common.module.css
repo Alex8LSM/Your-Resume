@@ -28,3 +28,7 @@
   line-height: 24px;
   color: var(--sidebartext);
 }
+.box {
+  display: flex;
+  align-items: center;
+}

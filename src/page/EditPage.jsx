@@ -9,7 +9,7 @@ import {
   TechSkills,
   SoftSkills,
   Languages,
-  EditBtn
+  Buttons
 } from '../components';
 import styles from './Page.module.css';
 
@@ -21,14 +21,22 @@ export default function EditPage({user}) {
       <Section className={styles.container}>
         {/* <!--sidebar_section--> */}
         <Sidebar photo={user.photo}>
-          <Contacts contacts={user.contacts}>
-            <EditBtn type="Delete"/>
-            <EditBtn type="Edit"/>
-          </Contacts>
-          <EditBtn type="Add"/>
-          <TechSkills skills={user.techSkills} />
-          <SoftSkills skills={user.softSkills} />
-          <Languages languages={user.languages} />
+          <Contacts 
+            contacts={user.contacts}
+            buttons={Buttons} 
+          />
+          <TechSkills 
+            skills={user.techSkills} 
+            buttons={Buttons}
+          />
+          <SoftSkills 
+            skills={user.softSkills} 
+            buttons={Buttons}
+          />
+          <Languages 
+            languages={user.languages} 
+            buttons={Buttons}
+          />
         </Sidebar>
         {/* <!--Main_content_section--> */}
         <Section className={styles.mainContent}>
