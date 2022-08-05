@@ -1,29 +1,53 @@
 import styles from './Contacts.module.css';
 import common from '../Common.module.css';
+import {
+  // useEffect,
+  useState,
+} from 'react';
+// import { useUserContext } from '../../data';
+const Contacts = ({ contacts, buttons }) => {
+  // let user = { ...data };
+  // user.contacts = null;
+  // const data = useUserContext();
+  // console.log('data', data);
+  // let { contacts } = user;
+  console.log('contacts', contacts);
+  const [data, setData] = useState();
+  // const newContacts
+  // useEffect(() => {
+  // setContacts(newContacts);
+  // console.log('efect  used');
+  // }, [data.contacts]);
+  const EditBtn = buttons?.EditBtn;
+  const DeleteBtn = buttons?.DeleteBtn;
+  const AddBtn = buttons?.AddBtn;
 
-const Contacts = ({ contacts,buttons }) => {
-  const EditBtn=buttons?.EditBtn;
-  const DeleteBtn=buttons?.DeleteBtn;
-  const AddBtn=buttons?.AddBtn;
+  // let { contacts } = user;
+  const onAdd = () => {
+    console.log('Add');
+  };
+  const onDelete = id => {
+    console.log('Delete');
+  };
+  const onEdit = id => {
+    console.log('Edit', id);
+    // const newContacts = [...contacts];
+    contacts[id].link = 'newEmail@Gmail.Com';
+    // user.flag = true;
+    // setContacts(newContacts);
+    // contacts = [...contacts];
+    // console.log('user', user);
+    setData([...contacts]);
+    console.log('data', data);
+  };
 
-    const onAdd = ()=>{
-      console.log("Add")
-    }
-    const onDelete = (id)=>{
-      console.log("Delete")
-    }
-    const onEdit = (id)=>{
-        console.log("Edit");
-        // contacts[id]="Edited";
-      }
-
-  const editButtons= (id)=>(
+  const editButtons = id => (
     <>
-      <EditBtn action={onEdit(id)}/>
-      <DeleteBtn action={onDelete(id)}/>
+      <EditBtn action={() => onEdit(id)} />
+      <DeleteBtn action={() => onDelete(id)} />
     </>
-  )
-  const addButton=<AddBtn action={onAdd}/>
+  );
+  const addButton = <AddBtn action={onAdd} />;
 
   const contactList = contacts.map((contact, key) => {
     const common = (
@@ -42,7 +66,6 @@ const Contacts = ({ contacts,buttons }) => {
               <span className={styles.contactText}>{contact.link}</span>
             </a>
             {editButtons(key)}
-          
           </li>
         );
       case 'phone':
@@ -93,14 +116,12 @@ const Contacts = ({ contacts,buttons }) => {
   });
   return (
     <div className={common.container}>
-        <h3 className={common.title}>
-          <div className={common.box}>
-              <span>
-                Contacts
-              </span>
-            {addButton}
-          </div>
-        </h3>
+      <h3 className={common.title}>
+        <div className={common.box}>
+          <span>Contacts</span>
+          {addButton}
+        </div>
+      </h3>
       <ul className={styles.list}>{contactList}</ul>
     </div>
   );

@@ -1,3 +1,3 @@
-import { UserContext, useUserContext } from "./userContext";
-import user from './user.json';
-export {UserContext,useUserContext,user}
+import { UserContext, useUserContext } from './userContext';
+import data from './user.json';
+export { UserContext, useUserContext, data };

@@ -9,34 +9,25 @@ import {
   TechSkills,
   SoftSkills,
   Languages,
-  Buttons
+  Buttons,
 } from '../components';
 import styles from './Page.module.css';
-
-export default function EditPage({user}) {
+// import { UserContext } from '../data';
+export default function EditPage({ user }) {
   return (
     // <!--Main_conteiner-->
     <Section className={styles.mainContainer}>
-    {/* <!--Rectangle_1--> */}
+      {/* <!--Rectangle_1--> */}
       <Section className={styles.container}>
         {/* <!--sidebar_section--> */}
         <Sidebar photo={user.photo}>
-          <Contacts 
-            contacts={user.contacts}
-            buttons={Buttons} 
-          />
-          <TechSkills 
-            skills={user.techSkills} 
-            buttons={Buttons}
-          />
-          <SoftSkills 
-            skills={user.softSkills} 
-            buttons={Buttons}
-          />
-          <Languages 
-            languages={user.languages} 
-            buttons={Buttons}
-          />
+          {/* <UserContext.Consumer> */}
+          {/* {value => */}
+          <Contacts contacts={user.contacts} buttons={Buttons} />
+          {/* </UserContext.Consumer> */}
+          <TechSkills skills={user.techSkills} buttons={Buttons} />
+          <SoftSkills skills={user.softSkills} buttons={Buttons} />
+          <Languages languages={user.languages} buttons={Buttons} />
         </Sidebar>
         {/* <!--Main_content_section--> */}
         <Section className={styles.mainContent}>

@@ -4,28 +4,37 @@
 // import {user} from '../../components';
 import Loader from '../Loader/Loader';
 import { Route, Routes } from 'react-router-dom';
-import { 
-  // useEffect, 
-  Suspense, lazy } from 'react';
-  import {useUserContext} from '../../data'
+import { useEffect, useState, Suspense, lazy } from 'react';
+import { UserContext, data } from '../../data';
 // const MyContext = createContext();
 const HomePage = lazy(() =>
-import('../../page/HomePage' /* webpackChunkName: "home" */)
+  import('../../page/HomePage' /* webpackChunkName: "home" */)
 );
 const EditPage = lazy(() =>
-import('../../page/EditPage' /* webpackChunkName: "edit" */)
+  import('../../page/EditPage' /* webpackChunkName: "edit" */)
 );
 
 export const App = () => {
-  const user = useUserContext()
+  // const [user, setUser] = useState(data);
+  // data.setUser = setUser;
+  // useEffect(() => {
+
+  //   setUser(data);
+  //   console.log('user change', user);
+  //   data.flag = false;
+
+  // }, [data]);
+  // const user = useUserContext();
   // const value  = useContext(MyContext);
   // console.log(value);
+  // data.flag = false;
   return (
+    // <UserContext.Provider value={data}>
     <Suspense fallback={<Loader />}>
-    <Routes>
-      <Route path="/" element={<HomePage user={user}/>} />
-      <Route path="edit" element={<EditPage user={user}/>} />
-      {/* <Route
+      <Routes>
+        <Route path="/" element={<HomePage user={data} />} />
+        <Route path="edit" element={<EditPage user={data} />} />
+        {/* <Route
         path="/register"
         element={!isLoggedIn ? <AuthPage /> : <Navigate to="/contacts" />}
       />
@@ -51,7 +60,8 @@ export const App = () => {
           )
         }
       /> */}
-    </Routes>
-  </Suspense>
+      </Routes>
+    </Suspense>
+    // </UserContext.Provider>
   );
 };
