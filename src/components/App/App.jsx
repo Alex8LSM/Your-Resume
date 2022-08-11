@@ -13,7 +13,9 @@ const HomePage = lazy(() =>
 const EditPage = lazy(() =>
   import('../../page/EditPage' /* webpackChunkName: "edit" */)
 );
-
+const TestPage = lazy(() =>
+  import('../../page/TestPage' /* webpackChunkName: "test" */)
+);
 export const App = () => {
   // const [user, setUser] = useState(data);
   // data.setUser = setUser;
@@ -34,6 +36,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage user={data} />} />
         <Route path="edit" element={<EditPage user={data} />} />
+        <Route path="test" element={<TestPage user={data} />} />
         {/* <Route
         path="/register"
         element={!isLoggedIn ? <AuthPage /> : <Navigate to="/contacts" />}

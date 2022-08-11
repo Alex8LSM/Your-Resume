@@ -9,7 +9,7 @@ const WorkExperience = ({ companies }) => {
       </h4>
       <p className={styles.period}>
         {company.period}
-        <span className={styles.divider}>|</span>
+        <span className={common.divider}>|</span>
         {company.country}
       </p>
       <ul className={styles.duties}>

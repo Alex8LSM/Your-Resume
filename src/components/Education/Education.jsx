@@ -7,7 +7,7 @@ const Education = ({ universities }) => {
       <h4 className={styles.specialty}>{university.specialty}</h4>
       <p className={styles.period}>
         {university.period}
-        <span className={styles.divider}>|</span>
+        <span className={common.divider}>|</span>
         {university.country}
       </p>
     </div>

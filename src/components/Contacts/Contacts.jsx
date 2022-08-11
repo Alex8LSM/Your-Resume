@@ -4,50 +4,41 @@ import {
   // useEffect,
   useState,
 } from 'react';
-// import { useUserContext } from '../../data';
-const Contacts = ({ contacts, buttons }) => {
-  // let user = { ...data };
-  // user.contacts = null;
-  // const data = useUserContext();
-  // console.log('data', data);
-  // let { contacts } = user;
+const Contacts = ({ contacts, buttons,actions }) => {
   console.log('contacts', contacts);
   const [data, setData] = useState();
-  // const newContacts
-  // useEffect(() => {
-  // setContacts(newContacts);
-  // console.log('efect  used');
-  // }, [data.contacts]);
   const EditBtn = buttons?.EditBtn;
   const DeleteBtn = buttons?.DeleteBtn;
   const AddBtn = buttons?.AddBtn;
+  const {onAdd,onDelete,onEdit}=actions;
+  // const onAdd = () => {
+  //   console.log('Add');
+  // };
+  // const onDelete = id => {
+  //   console.log('Delete');
+  // };
+  // const onEdit = id => {
+  //   console.log('Edit', id);
+  //   contacts[id].link = 'newEmail@Gmail.Com';
+  //   setData([...contacts]);
+  //   console.log('data', data);
+  // };
 
-  // let { contacts } = user;
-  const onAdd = () => {
-    console.log('Add');
-  };
-  const onDelete = id => {
-    console.log('Delete');
-  };
-  const onEdit = id => {
-    console.log('Edit', id);
-    // const newContacts = [...contacts];
-    contacts[id].link = 'newEmail@Gmail.Com';
-    // user.flag = true;
-    // setContacts(newContacts);
-    // contacts = [...contacts];
-    // console.log('user', user);
-    setData([...contacts]);
-    console.log('data', data);
-  };
-
-  const editButtons = id => (
-    <>
-      <EditBtn action={() => onEdit(id)} />
-      <DeleteBtn action={() => onDelete(id)} />
-    </>
-  );
-  const addButton = <AddBtn action={onAdd} />;
+  const editButtons = id => {
+    if (EditBtn && DeleteBtn)
+    return (
+     <>
+       <EditBtn action={() => onEdit(id)} />
+       <DeleteBtn action={() => onDelete(id)} />
+     </>
+   );
+  }
+  const addButton = ()=> {
+    if (AddBtn)
+    return (
+      <AddBtn action={onAdd} />
+    )
+  } 
 
   const contactList = contacts.map((contact, key) => {
     const common = (
@@ -119,7 +110,7 @@ const Contacts = ({ contacts, buttons }) => {
       <h3 className={common.title}>
         <div className={common.box}>
           <span>Contacts</span>
-          {addButton}
+          {addButton()}
         </div>
       </h3>
       <ul className={styles.list}>{contactList}</ul>

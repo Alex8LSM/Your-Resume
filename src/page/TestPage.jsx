@@ -10,6 +10,7 @@ import {
   TechSkills,
   SoftSkills,
   Languages,
+  ContactForm,
   Buttons,
 } from '../components';
 import Modal from '../components/Modal/Modal';
@@ -42,11 +43,11 @@ export default function EditPage({ user }) {
       <Section className={styles.container}>
         {/* <!--sidebar_section--> */}
           {/* Modal forms */}
-          {showModal && (
+          {/* {showModal && ( */}
             <Modal onToggleModal={toggleModal}>
-              <Languages languages={user.languages} buttons={Buttons}/>
+              <ContactForm/>
             </Modal>
-          )}
+          {/* )} */}
         <Sidebar photo={user.photo}>
           {/* <UserContext.Consumer> */}
           {/* {value => */}
