@@ -1,18 +1,42 @@
 {
-  "nickname": "Anton",
+  "nickname": "Alex",
   "photo": {
-    "image": "https://i.ibb.co/GHGDJBf/photo.jpg",
-    "alt": "Anton Chornyi photo"
+    "image": "https://i.ibb.co/cx6qjxt/Me.jpg",
+    "alt": "Oleksandr Khvaleba photo"
   },
   "contacts": [
     {
       "type": "phone",
-      "link": "+7 777 777 77 77"
+      "link": "+380 633 589 470"
     },
-	{
+    {
       "type": "email",
-      "link": "chornyiav@gmail.com"
-    }],
+      "link": "alex8inbox@gmail.com"
+    },
+    {
+      "type": "github",
+      "link": "https://github.com/Alex8LSM"
+    },
+    {
+      "type": "linkedin",
+      "link": "https://www.linkedin.com/in/oleksandr-khvaleba-847366247/"
+    },
+    {
+      "type": "instagram",
+      "link": "https://www.instagram.com/alex8_lsm/"
+    },
+    {
+      "type": "twitter",
+      "link": "https://twitter.com/Alex8LSM"
+    },
+    {
+      "type": "addr",
+      "link": {
+        "city": "Lutsk",
+        "country": "Ukraine"
+      }
+    }
+  ],
   "techSkills": [
     "HTML5",
     "CSS3",
@@ -22,75 +46,75 @@
     "React.js",
     "Node.js"
   ],
-  "softSkills": ["Scrum", "Agile", "GTD", "Teamwork"],
+  "softSkills": [
+    "Scrum",
+    "Agile",
+    "GTD",
+    "Teamwork",
+    "Growth Mindset",
+    "Creativity",
+    "Communication"
+  ],
   "aboutMe": {
-    "name": "Anton Chornyi",
-	"level": "Junior",
-    "profession": "Front-End Developer",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+    "name": "Oleksandr Khvaleba",
+    "level": "Junior",
+    "profession": "Full stack Developer",
+    "description": "I am a Full Stack developer looking for a  company that's aimed at making both everyday life and business easier, more productive and user-friendly. I have sound knowledge of HTML, CSS, JavaScript, and React. Also, I have hands-on experience in following Agile /Scrum methodology when working in a team. I am a fast learner, responsible, and ready for challenging tasks."
   },
   "projects": [
-    { 
-	  "title": "hellenglish",
-      "link": "https://hellenglish.goit.global/",
-	  "description": "Project description",
-      "tehnology": "HTML5, CSS3"
+    {
+      "title": "Web Studio",
+      "link": "https://alex8lsm.github.io/goit-markup-hw-08/",
+      "description": "Test site of the web studio. Created to consolidate HTML and CSS skills acquired during the study.",
+      "tehnology": "HTML5, SASS"
     },
     {
-	  "title": "kidslike",
-      "link": "https://kidslike.goit.global/",
-	  "description": "Project description",
-      "tehnology": "JavaScript "
+      "title": "Ice Cream",
+      "link": "https://alex8lsm.github.io/Fast_IT-HTML-project/",
+      "description": "Ice Cream company site. Neat and tasty design, responsible",
+      "tehnology": "HTML5, SASS, JS, Parcel"
     },
     {
-	  "title": "cryptohub",
-      "link": "https://cryptohub.goit.global/",
-	  "description": "Project description",
+      "title": "Filmoteka",
+      "link": "https://alex8lsm.github.io/Fast_IT-team-JS-project/",
+      "description": "Project about searching movies, and adding favorite movies to a client personal library.",
+      "tehnology": "HTML5, SASS, JS, Parcel "
+    },
+    {
+      "title": "SlimMom",
+      "link": "https://alex8lsm.github.io/Frontend-Project-SlimMom/",
+      "description": "Project for weight loss . Allows you to follow a diet by calculating the daily calory intake.",
       "tehnology": "React.js, Node.js"
     }
   ],
+
   "workExperience": [
     {
-      "position": "Front-End Developer",
-      "company": "Freelance",
-      "period": "September 2019 - up to now",
-      "country": "Country",
+      "position": "1C Operator",
+      "company": "Prod-Vektor",
+      "period": "September 2015 - up to now",
+      "country": "Ukraine",
       "duties": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Risus commodo viverra maecenas.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
-      ]
-    },
-    {
-      "position": "Manager",
-      "company": "Roga & Kopyta New",
-      "period": "March 2015 - October 2018",
-      "country": "Country",
-      "duties": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna aliqua.",
-        "Quis ipsum suspendisse ultrices gravida.",
-        "Risus commodo viverra maecenas."
-      ]
-    },
-    {
-      "position": "Manager ",
-      "company": "Roga & Kopyta LLC",
-      "period": "June 2014 - February 2015",
-      "country": "Country",
-      "duties": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Quis ipsum suspendisse ultrices gravida.",
-        "Risus commodo viverra maecenas."
+        "Working with the company's database",
+        "Communication with the customer",
+        "Creation and printing of invoices.",
+        "Communication with product delivery drivers.",
+        "Logistics reporting"
       ]
     }
   ],
   "education": [
     {
-      "university": "National University of Radioelectronics",
-      "specialty": "Management",
-      "period": "September 2009 - June 2014",
-      "country": "Country"
+      "university": "Lviv Polytechnic National University",
+      "specialty": "Software Engineering",
+      "period": "September 2007 - June 2012",
+      "country": "Ukraine"
+    },
+    {
+      "university": "IT School GoIT",
+      "specialty": "Full stack developer",
+      "period": "July 2021 - July 2022",
+      "country": "Ukraine"
     }
   ],
   "languages": [

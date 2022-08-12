@@ -9,7 +9,7 @@ import TechSkills from './TechSkills/TechSkills';
 import SoftSkills from './SoftSkills/SoftSkills';
 import Languages from './Languages/Languages';
 import Buttons from './Buttons/Buttons';
-import ContactForm from './ContactForm/ContactForm';
+import FormSwitcher from './Forms/FormSwitcher';
 export {
   Section,
   AboutMe,
@@ -21,6 +21,6 @@ export {
   TechSkills,
   SoftSkills,
   Languages,
-  ContactForm,
+  FormSwitcher,
   Buttons,
 };

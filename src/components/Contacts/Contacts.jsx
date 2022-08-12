@@ -5,12 +5,14 @@ import {
   useState,
 } from 'react';
 const Contacts = ({ contacts, buttons,actions }) => {
-  console.log('contacts', contacts);
+  // console.log('contacts', contacts);
   const [data, setData] = useState();
   const EditBtn = buttons?.EditBtn;
   const DeleteBtn = buttons?.DeleteBtn;
   const AddBtn = buttons?.AddBtn;
-  const {onAdd,onDelete,onEdit}=actions;
+  const onAdd=actions?.onAdd;
+  const onDelete =actions?.onDelete;
+  const onEdit =actions?.onEdit;
   // const onAdd = () => {
   //   console.log('Add');
   // };
@@ -73,7 +75,7 @@ const Contacts = ({ contacts, buttons,actions }) => {
         );
       case 'addr':
         return (
-          <li key={key}>
+          <li className={styles.listBox} key={key}>
             <a
               href={`https://www.google.com/maps/search/${contact.link.city},+${contact.link.country}`}
               className={styles.contactsLink}
@@ -90,7 +92,7 @@ const Contacts = ({ contacts, buttons,actions }) => {
         );
       default:
         return (
-          <li key={key}>
+          <li className={styles.listBox} key={key}>
             <a
               href={contact.link}
               className={styles.contactsLink}

@@ -10,47 +10,56 @@ import {
   TechSkills,
   SoftSkills,
   Languages,
+  FormSwitcher,
   Buttons,
 } from '../components';
 import Modal from '../components/Modal/Modal';
 import styles from './Page.module.css';
-// import { UserContext } from '../data';
 export default function EditPage({ user }) {
   const [showModal, setShowModal] = useState(false);
+  const [action, setAction] = useState();
   const toggleModal = () => {
     setShowModal(!showModal);
   };
   const onAdd = () => {
     console.log('Add');
+    setAction('Add');
     toggleModal();
   };
   const onDelete = id => {
     console.log('Delete');
+    setAction('Delete');
     toggleModal();
   };
   const onEdit = id => {
     console.log('Edit', id);
+    setAction('Edit');
     toggleModal();
     // contacts[id].link = 'newEmail@Gmail.Com';
     // setData([...contacts]);
     // console.log('data', data);
   };
   return (
-    // <!--Main_conteiner-->
     <Section className={styles.mainContainer}>
-      {/* <!--Rectangle_1--> */}
       <Section className={styles.container}>
-        {/* <!--sidebar_section--> */}
-          {/* Modal forms */}
-          {showModal && (
-            <Modal onToggleModal={toggleModal}>
-              <Languages languages={user.languages} buttons={Buttons}/>
-            </Modal>
-          )}
+        {/* Modal forms */}
+        {showModal && (
+          <Modal onToggleModal={toggleModal}>
+            <FormSwitcher
+              action={action}
+              toggleModal={toggleModal}
+              dataId="1"
+            />
+          </Modal>
+        )}
         <Sidebar photo={user.photo}>
           {/* <UserContext.Consumer> */}
           {/* {value => */}
-          <Contacts contacts={user.contacts} buttons={Buttons} actions={{onAdd,onDelete,onEdit}}/>
+          <Contacts
+            contacts={user.contacts}
+            buttons={Buttons}
+            actions={{ onAdd, onDelete, onEdit }}
+          />
           {/* </UserContext.Consumer> */}
           <TechSkills skills={user.techSkills} buttons={Buttons} />
           <SoftSkills skills={user.softSkills} buttons={Buttons} />
@@ -63,7 +72,7 @@ export default function EditPage({ user }) {
           <WorkExperience companies={user.workExperience} />
           <Education universities={user.education} />
         </Section>
-      {/* <Modal/> */}
+        {/* <Modal/> */}
       </Section>
     </Section>
   );

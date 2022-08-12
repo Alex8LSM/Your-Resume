@@ -10,16 +10,15 @@ import {
   TechSkills,
   SoftSkills,
   Languages,
-  ContactForm,
   Buttons,
 } from '../components';
 import Modal from '../components/Modal/Modal';
 import styles from './Page.module.css';
-// import { UserContext } from '../data';
 export default function EditPage({ user }) {
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => {
     setShowModal(!showModal);
+    console.log('modaltogled');
   };
   const onAdd = () => {
     console.log('Add');
@@ -42,16 +41,22 @@ export default function EditPage({ user }) {
       {/* <!--Rectangle_1--> */}
       <Section className={styles.container}>
         {/* <!--sidebar_section--> */}
-          {/* Modal forms */}
-          {/* {showModal && ( */}
-            <Modal onToggleModal={toggleModal}>
-              <ContactForm/>
-            </Modal>
-          {/* )} */}
+        {/* Modal forms */}
+        {/* {showModal && ( */}
+        <Modal onToggleModal={toggleModal}>
+          {/* <ContactForm action="Add"/> */}
+          {/* <ContactForm action="Edit"/> */}
+          {/* <DeleteForm closeModal={toggleModal} dataId="1" /> */}
+        </Modal>
+        {/* )} */}
         <Sidebar photo={user.photo}>
           {/* <UserContext.Consumer> */}
           {/* {value => */}
-          <Contacts contacts={user.contacts} buttons={Buttons} actions={{onAdd,onDelete,onEdit}}/>
+          <Contacts
+            contacts={user.contacts}
+            buttons={Buttons}
+            actions={{ onAdd, onDelete, onEdit }}
+          />
           {/* </UserContext.Consumer> */}
           <TechSkills skills={user.techSkills} buttons={Buttons} />
           <SoftSkills skills={user.softSkills} buttons={Buttons} />
@@ -64,7 +69,7 @@ export default function EditPage({ user }) {
           <WorkExperience companies={user.workExperience} />
           <Education universities={user.education} />
         </Section>
-      {/* <Modal/> */}
+        {/* <Modal/> */}
       </Section>
     </Section>
   );
