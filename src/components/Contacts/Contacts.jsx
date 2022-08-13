@@ -1,18 +1,21 @@
 import styles from './Contacts.module.css';
 import common from '../Common.module.css';
-import {
-  // useEffect,
-  useState,
-} from 'react';
-const Contacts = ({ contacts, buttons,actions }) => {
+// import {
+//   useEffect,
+//   useState,
+// } from 'react';
+import { UserActionContext, useUserActionContext } from 'context';
+const Contacts = ({ contacts, buttons }) => {
+  const actions = useUserActionContext(UserActionContext);
+  // const { onAdd, onDelete, onEdit } = actions;
   // console.log('contacts', contacts);
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
   const EditBtn = buttons?.EditBtn;
   const DeleteBtn = buttons?.DeleteBtn;
   const AddBtn = buttons?.AddBtn;
-  const onAdd=actions?.onAdd;
-  const onDelete =actions?.onDelete;
-  const onEdit =actions?.onEdit;
+  const onAdd = actions?.onAdd;
+  const onDelete = actions?.onDelete;
+  const onEdit = actions?.onEdit;
   // const onAdd = () => {
   //   console.log('Add');
   // };
@@ -28,19 +31,16 @@ const Contacts = ({ contacts, buttons,actions }) => {
 
   const editButtons = id => {
     if (EditBtn && DeleteBtn)
-    return (
-     <>
-       <EditBtn action={() => onEdit(id)} />
-       <DeleteBtn action={() => onDelete(id)} />
-     </>
-   );
-  }
-  const addButton = ()=> {
-    if (AddBtn)
-    return (
-      <AddBtn action={onAdd} />
-    )
-  } 
+      return (
+        <>
+          <EditBtn action={() => onEdit(id)} />
+          <DeleteBtn action={() => onDelete(id)} />
+        </>
+      );
+  };
+  const addButton = () => {
+    if (AddBtn) return <AddBtn action={onAdd} />;
+  };
 
   const contactList = contacts.map((contact, key) => {
     const common = (
@@ -73,19 +73,22 @@ const Contacts = ({ contacts, buttons,actions }) => {
             {editButtons(key)}
           </li>
         );
-      case 'addr':
+      case 'address':
+        const address = contact.link.split(',');
+        const city = address[0];
+        const country = address[1];
         return (
           <li className={styles.listBox} key={key}>
             <a
-              href={`https://www.google.com/maps/search/${contact.link.city},+${contact.link.country}`}
+              href={`https://www.google.com/maps/search/${city}+${country}`}
               className={styles.contactsLink}
               target="_blank"
               rel="noreferrer"
             >
               {common}
-              <span className={styles.contactText}>
-                {contact.link.city}, {contact.link.country}
-              </span>
+              <span
+                className={styles.contactText}
+              >{`${city}, ${country}`}</span>
             </a>
             {editButtons(key)}
           </li>

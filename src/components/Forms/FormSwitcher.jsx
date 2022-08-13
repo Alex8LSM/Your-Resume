@@ -1,16 +1,15 @@
-import ContactForm from "./ContactForm/ContactForm";
-import DeleteForm from "./DeleteForm/DeleteForm";
+import ContactForm from './ContactForm/ContactForm';
+import DeleteForm from './DeleteForm/DeleteForm';
 
-export default function formSwitcher ({action,toggleModal,dataId})
-{
-    switch (action) {
-        case 'Add':
-           return <ContactForm action="Add"/>
-        case 'Edit':
-            return <ContactForm action="Edit"/>
-        case 'Delete':
-            return <DeleteForm closeModal={toggleModal} dataId={dataId} />
-        default:
-          return;
-      }     
+export default function formSwitcher({ formAction, dataId }) {
+  switch (formAction) {
+    case 'Add':
+      return <ContactForm formAction="Add" />;
+    case 'Edit':
+      return <ContactForm formAction="Edit" dataId={dataId} />;
+    case 'Delete':
+      return <DeleteForm dataId={dataId} />;
+    default:
+      return;
+  }
 }

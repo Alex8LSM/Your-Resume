@@ -8,6 +8,7 @@
 .label {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 10px;
   font-family: roboto;
   font-weight: 700;
@@ -32,8 +33,13 @@
   background-color: aquamarine;
 }
 .box {
-  /* outline: solid 1px blue; */
   display: flex;
+  flex-wrap: wrap;
+}
+.addr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .svgContainer {
   display: flex;
@@ -44,11 +50,8 @@
   margin-right: 5px;
   border-radius: 50%;
   background-color: gray;
-  /* background-color: var(--titleBg); */
-  /* outline: solid 1px green; */
 }
 .svgIcon {
-  /* fill: var(--sidebartext); */
   fill: blue;
   width: 16px;
   height: 16px;

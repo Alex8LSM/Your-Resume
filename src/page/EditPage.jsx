@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Section,
   AboutMe,
@@ -15,11 +15,22 @@ import {
 } from '../components';
 import Modal from '../components/Modal/Modal';
 import styles from './Page.module.css';
-export default function EditPage({ user }) {
+import {
+  useUserDataContext,
+  UserDataContext,
+  UserActionContext,
+} from '../context';
+export default function EditPage() {
+  const userData = useUserDataContext(UserDataContext);
   const [showModal, setShowModal] = useState(false);
   const [action, setAction] = useState();
+  const [dataId, setDataId] = useState();
   const toggleModal = () => {
     setShowModal(!showModal);
+  };
+  const closeModal = () => {
+    console.log('Modal is closing');
+    setShowModal(false);
   };
   const onAdd = () => {
     console.log('Add');
@@ -27,53 +38,56 @@ export default function EditPage({ user }) {
     toggleModal();
   };
   const onDelete = id => {
-    console.log('Delete');
+    console.log('Delete', id);
     setAction('Delete');
+    setDataId(id);
     toggleModal();
   };
   const onEdit = id => {
     console.log('Edit', id);
     setAction('Edit');
+    setDataId(id);
     toggleModal();
-    // contacts[id].link = 'newEmail@Gmail.Com';
-    // setData([...contacts]);
-    // console.log('data', data);
+  };
+  const userAction = {
+    onAdd,
+    onEdit,
+    onDelete,
+    closeModal,
   };
   return (
-    <Section className={styles.mainContainer}>
-      <Section className={styles.container}>
-        {/* Modal forms */}
-        {showModal && (
-          <Modal onToggleModal={toggleModal}>
-            <FormSwitcher
-              action={action}
-              toggleModal={toggleModal}
-              dataId="1"
+    <UserActionContext.Provider value={userAction}>
+      <Section className={styles.mainContainer}>
+        <Section className={styles.container}>
+          {/* Modal forms */}
+          {showModal && (
+            <Modal onToggleModal={toggleModal}>
+              <FormSwitcher formAction={action} dataId={dataId} />
+            </Modal>
+          )}
+          <Sidebar photo={userData.photo}>
+            {/* <UserContext.Consumer> */}
+            {/* {value => */}
+            <Contacts
+              contacts={userData.contacts}
+              buttons={Buttons}
+              // actions={{ onAdd, onDelete, onEdit }}
             />
-          </Modal>
-        )}
-        <Sidebar photo={user.photo}>
-          {/* <UserContext.Consumer> */}
-          {/* {value => */}
-          <Contacts
-            contacts={user.contacts}
-            buttons={Buttons}
-            actions={{ onAdd, onDelete, onEdit }}
-          />
-          {/* </UserContext.Consumer> */}
-          <TechSkills skills={user.techSkills} buttons={Buttons} />
-          <SoftSkills skills={user.softSkills} buttons={Buttons} />
-          <Languages languages={user.languages} buttons={Buttons} />
-        </Sidebar>
-        {/* <!--Main_content_section--> */}
-        <Section className={styles.mainContent}>
-          <AboutMe data={user.aboutMe} />
-          <Projects projects={user.projects} />
-          <WorkExperience companies={user.workExperience} />
-          <Education universities={user.education} />
+            {/* </UserContext.Consumer> */}
+            <TechSkills skills={userData.techSkills} buttons={Buttons} />
+            <SoftSkills skills={userData.softSkills} buttons={Buttons} />
+            <Languages languages={userData.languages} buttons={Buttons} />
+          </Sidebar>
+          {/* <!--Main_content_section--> */}
+          <Section className={styles.mainContent}>
+            <AboutMe data={userData.aboutMe} />
+            <Projects projects={userData.projects} />
+            <WorkExperience companies={userData.workExperience} />
+            <Education universities={userData.education} />
+          </Section>
+          {/* <Modal/> */}
         </Section>
-        {/* <Modal/> */}
       </Section>
-    </Section>
+    </UserActionContext.Provider>
   );
 }

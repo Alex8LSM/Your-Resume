@@ -22,6 +22,10 @@
       "link": "https://www.linkedin.com/in/oleksandr-khvaleba-847366247/"
     },
     {
+      "type": "facebook",
+      "link": "hhttps://www.facebook.com/Alex8LSM/"
+    },
+    {
       "type": "instagram",
       "link": "https://www.instagram.com/alex8_lsm/"
     },
@@ -30,11 +34,8 @@
       "link": "https://twitter.com/Alex8LSM"
     },
     {
-      "type": "addr",
-      "link": {
-        "city": "Lutsk",
-        "country": "Ukraine"
-      }
+      "type": "address",
+      "link": "Lutsk,Ukraine"
     }
   ],
   "techSkills": [

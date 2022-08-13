@@ -9,14 +9,15 @@ import {
   TechSkills,
   SoftSkills,
   Languages,
-} from '../components';
+} from 'components';
 import styles from './Page.module.css';
-
-export default function HomePage({user}) {
+import { useUserDataContext, UserDataContext } from 'context';
+export default function HomePage() {
+  const user = useUserDataContext(UserDataContext);
   return (
     // <!--Main_conteiner-->
     <Section className={styles.mainContainer}>
-    {/* <!--Rectangle_1--> */}
+      {/* <!--Rectangle_1--> */}
       <Section className={styles.container}>
         {/* <!--sidebar_section--> */}
         <Sidebar photo={user.photo}>
